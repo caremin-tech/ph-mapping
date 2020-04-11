@@ -21,5 +21,6 @@
         - barangay_cleaned
 
 **Open questions:**
-- Ran into a question/roadblock for region-name-tagging...
+- Ran into a question/roadblock for region-name-tagging
+    - Check out [the exploratory notebook here](https://github.com/caremin-tech/ph-mapping/blob/master/data_cleaning_workstream/data_cleaning_workbook.ipynb) and control+F for "Questions / Roadblocks" to see my notes and question. 
 
