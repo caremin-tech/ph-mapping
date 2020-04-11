@@ -21,6 +21,7 @@
         - barangay_cleaned
 
 **Open questions:**
+- Why does `the new_locations_only_icm.csv` file not have the id fields / lat / long fields that the `new_locations.csv` file does? Can I assume we can join that back later on down the line and for now I can just concern myself with using the `the new_locations_only_icm.csv` as my SSOT for cleaning up the `original_locations.csv` mappings? 
 - Where exactly is the SSOT file from again?
     - I think I heard that it's from [gadm.org](gadm.org) but was wondering where exactly / when it was pulled?
 - Ran into a question/roadblock for region-name-tagging
