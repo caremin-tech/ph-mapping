@@ -1,2 +1,2 @@
-# phil-mapping
+# ph-mapping
 philippines mapping
