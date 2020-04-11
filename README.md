@@ -1,4 +1,4 @@
-# Philippines Mappng Project
+# Philippines Mapping Project
 
 ## Workstream 1 -- Data Cleaning
 
