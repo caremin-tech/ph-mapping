@@ -21,6 +21,8 @@
         - barangay_cleaned
 
 **Open questions:**
+- Where exactly is the SSOT file from again?
+    - I think I heard that it's from [gadm.org](gadm.org) but was wondering where exactly / when it was pulled?
 - Ran into a question/roadblock for region-name-tagging
     - Check out [the exploratory notebook here](https://github.com/caremin-tech/ph-mapping/blob/master/data_cleaning_workstream/data_cleaning_workbook.ipynb) and control+F for "Questions / Roadblocks" to see my notes and question. 
 
