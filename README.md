@@ -23,7 +23,7 @@
 **Open questions:**
 ###### COMMENTS BELOW
 - Why does `the new_locations_only_icm.csv` file not have the id fields / lat / long fields that the `new_locations.csv` file does? Can I assume we can join that back later on down the line and for now I can just concern myself with using the `the new_locations_only_icm.csv` as my SSOT for cleaning up the `original_locations.csv` mappings? 
-###### this was because new_locations_only_icm was actually an old file I wasn't too familiar with new_locations I pulled last Friday from the gadm.org website and kept their ids and lat/long. See answer to your last question for next steps on this.
+    ###### this was because new_locations_only_icm was actually an old file I wasn't too familiar with new_locations I pulled last Friday from the gadm.org website and kept their ids and lat/long. See answer to your last question for next steps on this.
 - Where exactly is the SSOT file from again?
     - I think I heard that it's from [gadm.org](gadm.org) but was wondering where exactly / when it was pulled?
     ###### Correct (4/10/2020) -- https://gadm.org/download_country_v3.html
