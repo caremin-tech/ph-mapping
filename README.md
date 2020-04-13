@@ -21,17 +21,17 @@
         - barangay_cleaned
 
 **Open questions:**
-### COMMENTS BELOW ###
+# COMMENTS BELOW
 - Why does `the new_locations_only_icm.csv` file not have the id fields / lat / long fields that the `new_locations.csv` file does? Can I assume we can join that back later on down the line and for now I can just concern myself with using the `the new_locations_only_icm.csv` as my SSOT for cleaning up the `original_locations.csv` mappings? 
-### this was because new_locations_only_icm was actually an old file I wasn't too familiar with new_locations I pulled last Friday from the gadm.org website and kept their ids and lat/long. See answer to your last question for next steps on this.
+# this was because new_locations_only_icm was actually an old file I wasn't too familiar with new_locations I pulled last Friday from the gadm.org website and kept their ids and lat/long. See answer to your last question for next steps on this.
 - Where exactly is the SSOT file from again?
     - I think I heard that it's from [gadm.org](gadm.org) but was wondering where exactly / when it was pulled?
-    ### Correct (4/10/2020) -- https://gadm.org/download_country_v3.html
+    # Correct (4/10/2020) -- https://gadm.org/download_country_v3.html
 - Ran into a question/roadblock for region-name-tagging
     - Check out [the exploratory notebook here](https://github.com/caremin-tech/ph-mapping/blob/master/data_cleaning_workstream/data_cleaning_workbook.ipynb) and control+F for "Questions / Roadblocks" to see my notes and question. 
-    ### I have added 2 new files to the repo: 
-    ### 1. Official PSA (philippines statistical authority) Region-Province-Names.pdf (this is the complete official list of the current names as of 12/31/2019. WE need to follow these names as the official region/province names. Neither original_locations or new_locations may follow this naming schema but it is the official philippines naming convention (SSOT).
-    ### 2. non_icm_loc.csv: Re: your first open question, let's use new_locations and just remove the provinces labeled TRUE in this file. They are the ones in the Luzon region (excluding Palawan which we want to keep) -- that will create a new_locations_icm_only.csv file. 
+    # I have added 2 new files to the repo: 
+    # 1. Official PSA (philippines statistical authority) Region-Province-Names.pdf (this is the complete official list of the current names as of 12/31/2019. WE need to follow these names as the official region/province names. Neither original_locations or new_locations may follow this naming schema but it is the official philippines naming convention (SSOT).
+    # 2. non_icm_loc.csv: Re: your first open question, let's use new_locations and just remove the provinces labeled TRUE in this file. They are the ones in the Luzon region (excluding Palawan which we want to keep) -- that will create a new_locations_icm_only.csv file. 
    
 **Additional Notes**: 
 - 1. LUZON, VISAYAS, MINDINAO are not official regions but actually just the 3 subsections of the Philippines (Top, Middle, Bottom in that order)
