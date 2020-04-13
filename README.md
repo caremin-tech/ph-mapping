@@ -30,7 +30,7 @@
 - Ran into a question/roadblock for region-name-tagging
     - Check out [the exploratory notebook here](https://github.com/caremin-tech/ph-mapping/blob/master/data_cleaning_workstream/data_cleaning_workbook.ipynb) and control+F for "Questions / Roadblocks" to see my notes and question. 
     ###### I have added 2 new files to the repo: 
-    ###### 1. Official PSA (philippines statistical authority) Region-Province-Names.pdf (this is the complete official list of the current names as of 12/31/2019. WE need to follow these names as the official region/province names. Neither original_locations or new_locations may follow this naming schema but it is the official philippines naming convention (SSOT).
+    ###### 1. Official PSA (philippines statistical authority) Region-Province-Names.pdf (this is the complete official list of the current names as of 12/31/2019. WE need to follow these names as the official region/province names. Neither original_locations or new_locations may follow this naming schema but it is the official philippines naming convention (SSOT). -- download location: https://psa.gov.ph/classification/psgc/
     ###### 2. non_icm_loc.csv: Re: your first open question, let's use new_locations and just remove the provinces labeled TRUE in this file. They are the ones in the Luzon region (excluding Palawan which we want to keep) -- that will create a new_locations_icm_only.csv file. 
    
 **Additional Notes**: 
