@@ -9,8 +9,8 @@ The goal of this workstream is to use a single source of truth (SSOT) file of pr
 - **Repo Setup and Environment Management:**
     - [ ] Create environment management files for repo:
         - [ ] Using conda throughout, I'll put together an env yaml file
-    - [ ] Create branching setup for the repo:
-        - [ ] Create a paul_dev branch to ensure we're working with best SDLC practices
+    - [x] Create branching setup for the repo:
+        - [x] Create a paul_dev branch to ensure we're working with best SDLC practices
 - **Build Geo Label Matching Logic:**
     - [x] Import and manage file that screens out non-ICM regions -- `raw_data/non_icm_loc.csv`:
         - [x] Set Batangas and Bulacan to NOT be removed (done in Excel)
