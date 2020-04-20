@@ -1,5 +1,15 @@
 # Philippines Mapping Project
 
+## Setup:
+- **Environment Setup:**
+    - Clone the master branch of the repo
+    - Create the conda environment from bash with `conda env create -f environment.yml`
+    - Activate the conda environment from bash with `conda activate philmappingenv`
+    - You're good to go
+    - If you update / add packages, once the environment is activated, add them to the `environment.yml`, save the file, and from bash run `conda env update --file local.yml`
+- **Contributions:**
+    - To contribute to this repo, please create a development branch (i.e. `myname_dev`) and open a PR against master for any contributions.
+
 ## Workstream 1 -- Data Cleaning
 
 ### Summary: 
@@ -7,8 +17,7 @@ The goal of this workstream is to use a single source of truth (SSOT) file of pr
 
 ### Work Drivers:
 - **Repo Setup and Environment Management:**
-    - [ ] Create environment management files for repo:
-        - [ ] Using conda throughout, I'll put together an env yaml file
+    - [x] Create environment management files for repo:
     - [x] Create branching setup for the repo:
         - [x] Create a paul_dev branch to ensure we're working with best SDLC practices
 - **Build Geo Label Matching Logic:**
