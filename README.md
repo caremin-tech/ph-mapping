@@ -26,7 +26,7 @@ The goal of this workstream is to use a single source of truth (SSOT) file of pr
             - [x] Iterate over each unique province name in the *unclean* file, and check if the value in the `province` column matches a value contained in the `province` column of the SSOT file (accounting for capitalization differences)
             - [ ] After having done the automated matches possible, perform the manual matching necessary based on additional research:
                 - [ ] Manually match "City of Isabela (Capital)", "Cotabato", and "Davao Occidental"
-             - [ ] Use the `province_mapping_df` to create the new `province_cleaned` column
+             - [ ] Use the `province_mapping_df` (and any other custom logic needed) to create the new `province_cleaned` column
         - [ ] Create a new column -- `city_cleaned` -- to be appended to `raw_data/original_locations.csv`, with the *correct* name for the city associated with each row:
             - [ ] Same subtasks as above, but more complicated matching logic is to be expected the more geographically granular you go
         - [ ] Create a new column -- `barangay_cleaned` -- to be appended to `raw_data/original_locations.csv`, with the *correct* name for the barangay associated with each row:
