@@ -1,4 +1,4 @@
-# Philippines Mapping Project
+# ICM Philippines Mapping Project
 
 ## Setup:
 - **Environment Setup:**
@@ -8,7 +8,22 @@
     - You're good to go
     - If you update / add packages, once the environment is activated, add them to the `environment.yml`, save the file, and from bash run `conda env update --file local.yml`
 - **Contributions:**
-    - To contribute to this repo, please create a development branch (i.e. `myname_dev`) and open a PR against master for any contributions.
+    - To contribute to this repo, please create a development branch (i.e. `myname_dev`) and open a PR against master for any contributions:
+        - Best practices for PR creation and management:
+            - Ensure you're working on the branch you created with (from bash) `git checkout myname_dev`
+            - Your working branch at this stage should be in sync with master exactly
+            - Make you code changes and, once ready to open the PR, execute the below (from bash):
+                - `git add .`
+                - `git commit -m "<your commit message here>"`
+                - `git push`
+            - At this point, open GitHub in browser, and go to "branches" tab of the repo
+            - Click "New Pull Request"
+            - Fill out details, add a reviewer unless your changes are known to the repo managers, and click through to open the PR
+            - After it has been merged, execute the below (from bash) to ensure your branch is synced with master:
+                - `git pull`
+                - `git merge origin/master`
+                - `git push`
+            - Rinse and repeat; you're good to go
 
 ## Workstream 1 -- Data Cleaning
 
