@@ -45,15 +45,17 @@ The goal of this workstream is to use a single source of truth (SSOT) file of pr
         - [x] Save out the newly created SSOT file -- `processed_data/ssot_df.csv` -- for reference and future use
     - [ ] Clean up the *unclean* file --  `raw_data/original_locations.csv` -- and add new correct geo-mapping fields:
         - [x] As done with the SSOT file, remove all rows from the *unclean* file that are in a province contained in the `raw_data/non_icm_loc.csv` file accompanied by the value: True (meaning it should be removed as it is not a part of the regions ICM serves)
-        - [ ] Create a new column -- `province_cleaned` -- to be appended to the *unclean* file, with the *correct* name for the province associated with each row:
+        - [x] Create `under_construction_df` -- a new go-forward DF which will be a copy of the *unclean* file with the new cleaned columns added
+        - [x] Create a new column -- `province_cleaned` -- to be appended to the `under_construction_df`, with the *correct* name for the province associated with each row:
             - [x] Create `province_mapping_df`, which will eventually serve as a mapping dictionnary of unclean to clean names, but will start by simply storing all unique province names in the *unclean* file
             - [x] Iterate over each unique province name in the *unclean* file, and check if the value in the `province` column matches a value contained in the `province` column of the SSOT file (accounting for capitalization differences)
-            - [ ] After having done the automated matches possible, perform the manual matching necessary based on additional research:
-                - [ ] Manually match "City of Isabela (Capital)", "Cotabato", and "Davao Occidental"
-             - [ ] Use the `province_mapping_df` (and any other custom logic needed) to create the new `province_cleaned` column
-        - [ ] Create a new column -- `city_cleaned` -- to be appended to `raw_data/original_locations.csv`, with the *correct* name for the city associated with each row:
+            - [x] After having done the automated matches possible, perform the manual matching necessary based on additional research:
+                - [x] Manually match "City of Isabela (Capital)", "Cotabato", and "Davao Occidental"
+            - [x] Use the `province_mapping_df` (and any other custom logic needed) to create the new `province_cleaned` column
+        - [x] Write out `processed_data/under_construction_df.csv` to log the work done so far
+        - [ ] Create a new column -- `city_cleaned` -- to be appended to the `under_construction_df`, with the *correct* name for the city associated with each row:
             - [ ] Same subtasks as above, but more complicated matching logic is to be expected the more geographically granular you go
-        - [ ] Create a new column -- `barangay_cleaned` -- to be appended to `raw_data/original_locations.csv`, with the *correct* name for the barangay associated with each row:
+        - [ ] Create a new column -- `barangay_cleaned` -- to be appended to the `under_construction_df`, with the *correct* name for the barangay associated with each row:
             - [ ] Same subtasks as above, but more complicated matching logic is to be expected the more geographically granular you go
 
 ### Additonal Notes / Exogenous Comments:
