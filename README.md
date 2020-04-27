@@ -6,7 +6,7 @@
     - Create the conda environment from bash with `conda env create -f environment.yml`
     - Activate the conda environment from bash with `conda activate philmappingenv`
     - You're good to go
-    - If you update / add packages, once the environment is activated, add them to the `environment.yml`, save the file, and from bash run `conda env update --file local.yml`
+    - If you update / add packages, once the environment is activated, add them to the `environment.yml`, save the file, and from bash run `conda env update --file environment.yml`
 - **Contributions:**
     - To contribute to this repo, please create a development branch (i.e. `myname_dev`) and open a PR against master for any contributions:
         - Best practices for PR creation and management:
