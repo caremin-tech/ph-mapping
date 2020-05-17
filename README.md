@@ -54,7 +54,13 @@ The goal of this workstream is to use a single source of truth (SSOT) file of pr
             - [x] Use the `province_mapping_df` (and any other custom logic needed) to create the new `province_cleaned` column
         - [x] Write out `processed_data/under_construction_df.csv` to log the work done so far
         - [ ] Create a new column -- `city_cleaned` -- to be appended to the `under_construction_df`, with the *correct* name for the city associated with each row:
-            - [ ] Same subtasks as above, but more complicated matching logic is to be expected the more geographically granular you go
+            - [x] First I'll create a df that has only the fields we'll need to match `city` names in the `under_construct_df` to `city` names in our SSOT -- region, province_cleaned, city, and barangay
+            - [x] First we go for all low-hanging fruit -- cities that we can match to the `ssot_df` because we can find an exact pairing between sets of province, city, and barangay between the `just_geo_names_df` df and the `ssot_df`. We'll perform this matching via a left join of the `ssot_df` onto the `just_geo_names_df`. We'll then flag all the rows that were matched successfully with this simple method
+            - [x] Create a df with just the geo names we couldn't match to the `ssot_df` across all 3 geos so we can count the records still left to match. We'll do this multiple times from here on out until we arrive at 0 records we can't match
+            - [x] (Round 1 of ad hoc research) Now let's make any fixes we noticed through ad hoc exploration and see how that affects our match rate
+            - [x] (Round 1 of ad hoc research) It appears we've spotted one trend that can be corrected algorithmically -- we should look for instances of the city names that use the formulation "CITY OF xxxxxxx" and replace them with the formulation "xxxxxxx CITY"
+            - [x] (Round 1 of ad hoc research) Looks like the formulation change from "CITY OF xxxxxxx" to "xxxxxxx CITY" fixed 910 -- (9192-8282) -- records
+            - [ ] (Round 2 of ad hoc research) Now let's make any fixes we noticed through ad hoc exploration and see how that affects our match rate
         - [ ] Create a new column -- `barangay_cleaned` -- to be appended to the `under_construction_df`, with the *correct* name for the barangay associated with each row:
             - [ ] Same subtasks as above, but more complicated matching logic is to be expected the more geographically granular you go
 
