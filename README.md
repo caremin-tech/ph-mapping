@@ -53,16 +53,22 @@ The goal of this workstream is to use a single source of truth (SSOT) file of pr
                 - [x] Manually match "City of Isabela (Capital)", "Cotabato", and "Davao Occidental"
             - [x] Use the `province_mapping_df` (and any other custom logic needed) to create the new `province_cleaned` column
         - [x] Write out `processed_data/under_construction_df.csv` to log the work done so far
-        - [ ] Create a new column -- `city_cleaned` -- to be appended to the `under_construction_df`, with the *correct* name for the city associated with each row:
-            - [x] First I'll create a df that has only the fields we'll need to match `city` names in the `under_construct_df` to `city` names in our SSOT -- region, province_cleaned, city, and barangay
+        - [ ] City and Barangay are trickier and so we need to solve them all at once with more detailed analysis:
+            - [x] Prior to jumping in, we'll prep by cleaning up some object formatting issues.
             - [x] First we go for all low-hanging fruit -- cities that we can match to the `ssot_df` because we can find an exact pairing between sets of province, city, and barangay between the `just_geo_names_df` df and the `ssot_df`. We'll perform this matching via a left join of the `ssot_df` onto the `just_geo_names_df`. We'll then flag all the rows that were matched successfully with this simple method
             - [x] Create a df with just the geo names we couldn't match to the `ssot_df` across all 3 geos so we can count the records still left to match. We'll do this multiple times from here on out until we arrive at 0 records we can't match
             - [x] (Round 1 of ad hoc research) Now let's make any fixes we noticed through ad hoc exploration and see how that affects our match rate
             - [x] (Round 1 of ad hoc research) It appears we've spotted one trend that can be corrected algorithmically -- we should look for instances of the city names that use the formulation "CITY OF xxxxxxx" and replace them with the formulation "xxxxxxx CITY"
-            - [x] (Round 1 of ad hoc research) Looks like the formulation change from "CITY OF xxxxxxx" to "xxxxxxx CITY" fixed 910 -- (9192-8282) -- records
-            - [ ] (Round 2 of ad hoc research) Now let's make any fixes we noticed through ad hoc exploration and see how that affects our match rate
-        - [ ] Create a new column -- `barangay_cleaned` -- to be appended to the `under_construction_df`, with the *correct* name for the barangay associated with each row:
-            - [ ] Same subtasks as above, but more complicated matching logic is to be expected the more geographically granular you go
+            - [x] (Round 1 of ad hoc research) Looks like the formulation change from "CITY OF xxxxxxx" to "xxxxxxx CITY" fixed 952 -- (8451-7499) -- records!
+            - [x] (Round 2 of ad hoc research)  It appears we've spotted another trend that can be corrected algorithmically -- we should look for instances where the baranguy name doesn't match the SSOT because of the addition of the word or abbreviation for "population" -- poblacion.
+            - [x] (Round 2 of ad hoc research) Looks like the change to strip all barangays of the (POB.) string fixed 1,375 -- (7499-6124) -- records.
+            - [x] (Round 3 of ad hoc research) It appears we've spotted another trend that can be corrected algorithmically -- we should look for instances where the baranguy name doesn't match the SSOT because the barangay name is "empty" and delete the row.
+            - [x] (Round 3 of ad hoc research) Looks like the change to delete all rows where the "barangay" value was "EMPTY" fixed 203 -- (6124-5921) -- records.
+            - [x] (Round 4 of ad hoc research) It appears that my previous logic for cleaning up province names failed slightly, as it didn't account for instances of duplication (i.e. it tagged the province name of "LEYTE\n LEYTE" as correct because it does CONTAIN "LEYTE". It should be a quick fix to manually remove these instances.
+            - [x] (Round 4 of ad hoc research) Looks like the change to remedy the duplicated "LEYTE" cleaned province names fixed 1,499 -- (5921-4422) -- records.
+            - [ ] (Round 5 of ad hoc research) ... whatever I discover next in digging into the `problematic_geo_names` df to identify trends in mismatches between the `under_construction_df` and the `ssot_df` will go here.
+        - [x] Write out `processed_data/under_construction_df.csv` to log the work done so far
+        
 
 ### Additonal Notes / Exogenous Comments:
 - The file `Region-Province-Names.pdf` (downloaded [from this link here](https://psa.gov.ph/classification/psgc/)) is the complete official list of the current names for geographies as of 12/31/2019 per the Official PSA (philippines statistical authority)
